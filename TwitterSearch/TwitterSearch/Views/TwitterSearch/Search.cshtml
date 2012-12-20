@@ -1,0 +1,62 @@
+﻿@model TwitterSearchApp.Models.TwitterSearchModel
+
+@{
+    ViewBag.Title = "ASP.NET MVC";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm(FormMethod.Get))
+{
+    <h2>ASP.NET MVC</h2>
+    <div id="searchBox">
+        @Html.LabelFor(m => m.SearchQueryModel.SearchText) 
+        @Html.TextBox("searchText", "#test")
+        <input id="searchButton" type="submit" value="Search" />
+    </div>
+    
+    if(Model != null && Model.SearchResultModel != null)
+    {
+        if (Model.SearchResultModel.TweetResults != null)
+        {
+            <div id="searchResults">
+                <div id="pagingControls">
+                    @if (Model.SearchQueryModel.ClientPage > 1)
+                    {
+                        @Ajax.ActionLink("Previous", "Search", new
+                            {
+                                searchText = Model.SearchQueryModel.SearchText,
+                                requestedPage = Model.SearchQueryModel.ClientPage - 1
+                            },
+                            new AjaxOptions { })
+                    }
+
+                    @Ajax.ActionLink("Next", "Search", new
+                        {
+                            searchText = Model.SearchQueryModel.SearchText,
+                            requestedPage = Model.SearchQueryModel.ClientPage + 1
+                        },
+                        new AjaxOptions { })
+                </div>
+        
+                <ul id="tweets">
+                    @foreach (var tweet in Model.SearchResultModel.TweetResults)
+                    {
+                        <li>
+                            <h3>
+				                <img src="@tweet.ProfileImageLocation" alt="@tweet.FromUserScreenName" width="45" />
+				                <div>
+					                <a href="http://twitter.com/@tweet.FromUserScreenName" title="@tweet.FromUserScreenName">@tweet.FromUserScreenName</a>
+				                </div>
+			                </h3>
+			                <p>@tweet.Text</p>
+                        </li>
+                    }
+                 </ul>
+             </div>
+        }
+        else
+        {
+            <span class="error">@Model.SearchResultModel.ErrorMessage</span>
+        }
+    }
+}

@@ -1,0 +1,26 @@
+C:\Users\Sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\EntityFramework.dll
+C:\Users\Sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\Twitterizer2.dll
+C:\Users\Sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\Newtonsoft.Json.dll
+C:\Users\Sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\EntityFramework.xml
+C:\Users\Sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\Twitterizer2.pdb
+C:\Users\Sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\Twitterizer2.xml
+C:\Users\Sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\Newtonsoft.Json.pdb
+C:\Users\Sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\Newtonsoft.Json.xml
+C:\Users\Sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Sean\Documents\Visual Studio 2010\Projects\TwitterSearch\TwitterSearch\bin\TwitterSearchApp.dll
+C:\Users\Sean\Documents\Visual Studio 2010\Projects\TwitterSearch\TwitterSearch\bin\TwitterSearchApp.pdb
+C:\Users\Sean\Documents\Visual Studio 2010\Projects\TwitterSearch\TwitterSearch\obj\Debug\TwitterSearchApp.dll
+C:\Users\Sean\Documents\Visual Studio 2010\Projects\TwitterSearch\TwitterSearch\obj\Debug\TwitterSearchApp.pdb
+C:\github\twitter-search\TwitterSearch\TwitterSearch\bin\TwitterSearchApp.dll
+C:\github\twitter-search\TwitterSearch\TwitterSearch\bin\TwitterSearchApp.pdb
+C:\github\twitter-search\TwitterSearch\TwitterSearch\bin\EntityFramework.dll
+C:\github\twitter-search\TwitterSearch\TwitterSearch\bin\Newtonsoft.Json.dll
+C:\github\twitter-search\TwitterSearch\TwitterSearch\bin\Twitterizer2.dll
+C:\github\twitter-search\TwitterSearch\TwitterSearch\bin\EntityFramework.xml
+C:\github\twitter-search\TwitterSearch\TwitterSearch\bin\Newtonsoft.Json.pdb
+C:\github\twitter-search\TwitterSearch\TwitterSearch\bin\Newtonsoft.Json.xml
+C:\github\twitter-search\TwitterSearch\TwitterSearch\bin\Twitterizer2.pdb
+C:\github\twitter-search\TwitterSearch\TwitterSearch\bin\Twitterizer2.xml
+C:\github\twitter-search\TwitterSearch\TwitterSearch\obj\Debug\ResolveAssemblyReference.cache
+C:\github\twitter-search\TwitterSearch\TwitterSearch\obj\Debug\TwitterSearchApp.dll
+C:\github\twitter-search\TwitterSearch\TwitterSearch\obj\Debug\TwitterSearchApp.pdb

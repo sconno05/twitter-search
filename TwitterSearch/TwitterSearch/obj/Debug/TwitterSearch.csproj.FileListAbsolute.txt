@@ -1,0 +1,13 @@
+c:\users\sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\TwitterSearch.dll
+c:\users\sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\TwitterSearch.pdb
+c:\users\sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\EntityFramework.dll
+c:\users\sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\EntityFramework.xml
+c:\users\sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\obj\Debug\ResolveAssemblyReference.cache
+c:\users\sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\obj\Debug\TwitterSearch.dll
+c:\users\sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\obj\Debug\TwitterSearch.pdb
+c:\users\sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\Twitterizer2.dll
+c:\users\sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\Newtonsoft.Json.dll
+c:\users\sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\Twitterizer2.pdb
+c:\users\sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\Twitterizer2.xml
+c:\users\sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\Newtonsoft.Json.pdb
+c:\users\sean\documents\visual studio 2010\Projects\TwitterSearch\TwitterSearch\bin\Newtonsoft.Json.xml
