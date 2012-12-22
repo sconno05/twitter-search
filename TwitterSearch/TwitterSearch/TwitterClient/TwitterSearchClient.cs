@@ -75,9 +75,8 @@ namespace TwitterSearchApp.TwitterClient
                 throw new TwitterSearchException(twitterResponse.Result, query);
             }
 
-            // Twitterizer doesn't pass the max_id back, so that needs to be parsed separately
-            JToken token = JObject.Parse(twitterResponse.Content);
-            HttpContext.Current.Session[MAX_ID] = (long)token.SelectToken("max_id");
+            // Store the MaxId for later to maintain page consistency
+            HttpContext.Current.Session[MAX_ID] = twitterResponse.ResponseObject.MaxId;
 
             // Cache results for future requests
             HttpContext.Current.Session[CACHED_PAGE_RESULTS] = twitterResponse.ResponseObject;

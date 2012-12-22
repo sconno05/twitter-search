@@ -24,3 +24,16 @@ C:\github\twitter-search\TwitterSearch\TwitterSearch\bin\Twitterizer2.xml
 C:\github\twitter-search\TwitterSearch\TwitterSearch\obj\Debug\ResolveAssemblyReference.cache
 C:\github\twitter-search\TwitterSearch\TwitterSearch\obj\Debug\TwitterSearchApp.dll
 C:\github\twitter-search\TwitterSearch\TwitterSearch\obj\Debug\TwitterSearchApp.pdb
+C:\repos\twitter-search\TwitterSearch\TwitterSearch\bin\TwitterSearchApp.dll
+C:\repos\twitter-search\TwitterSearch\TwitterSearch\bin\TwitterSearchApp.pdb
+C:\repos\twitter-search\TwitterSearch\TwitterSearch\bin\EntityFramework.dll
+C:\repos\twitter-search\TwitterSearch\TwitterSearch\bin\Newtonsoft.Json.dll
+C:\repos\twitter-search\TwitterSearch\TwitterSearch\bin\Twitterizer2.dll
+C:\repos\twitter-search\TwitterSearch\TwitterSearch\bin\EntityFramework.xml
+C:\repos\twitter-search\TwitterSearch\TwitterSearch\bin\Newtonsoft.Json.pdb
+C:\repos\twitter-search\TwitterSearch\TwitterSearch\bin\Newtonsoft.Json.xml
+C:\repos\twitter-search\TwitterSearch\TwitterSearch\bin\Twitterizer2.pdb
+C:\repos\twitter-search\TwitterSearch\TwitterSearch\bin\Twitterizer2.xml
+C:\repos\twitter-search\TwitterSearch\TwitterSearch\obj\Debug\TwitterSearchApp.csprojResolveAssemblyReference.cache
+C:\repos\twitter-search\TwitterSearch\TwitterSearch\obj\Debug\TwitterSearchApp.dll
+C:\repos\twitter-search\TwitterSearch\TwitterSearch\obj\Debug\TwitterSearchApp.pdb
