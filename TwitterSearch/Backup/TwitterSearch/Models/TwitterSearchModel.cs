@@ -9,16 +9,20 @@ namespace TwitterSearchApp.Models
     /// </summary>
     public class TwitterSearchModel
     {
-        public TwitterSearchModel()
-        {
-            this.ClientPage = 1;
-        }
+        public TwitterSearchQueryModel SearchQueryModel { get; set; }
+        public TwitterSearchResultModel SearchResultModel { get; set; }
+    }
 
+    /// <summary>
+    /// Contains search query data
+    /// </summary>
+    public class TwitterSearchQueryModel
+    {
         private const int CLIENT_PAGE_SIZE = 10;
 
         [Required]
         [DataType(DataType.Text)]
-        [Display(Name = "Enter a hashtag")]
+        [Display(Name="Enter a hashtag")]
         public string SearchText { get; set; }
 
         public int ClientPage { get; set; }
@@ -27,10 +31,6 @@ namespace TwitterSearchApp.Models
         {
             get { return CLIENT_PAGE_SIZE; }
         }
-
-        public bool NewSearch { get; set; }
-
-        public TwitterSearchResultModel SearchResultModel { get; set; }
     }
 
     /// <summary>

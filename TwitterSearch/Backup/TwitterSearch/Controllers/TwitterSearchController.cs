@@ -21,28 +21,28 @@ namespace TwitterSearchApp.Controllers
         /// <param name="searchText">The query's search text (e.g. hash tag)</param>
         /// <param name="requestedPage">The page of data requested for display</param>
         /// <returns></returns>
-        public ActionResult Search(TwitterSearchModel model)
+        public ActionResult Search(string searchText, int? requestedPage)
         {
-            if (String.IsNullOrEmpty(model.SearchText))
+            if (String.IsNullOrEmpty(searchText))
             {
                 return View();
             }
 
-            PopulateSearchResultModel(model);
-            return View(model);
-        }
+            // Populate the search query
+            TwitterSearchModel model = new TwitterSearchModel();
+            model.SearchQueryModel = new TwitterSearchQueryModel();
+            model.SearchQueryModel.SearchText = searchText;
+            model.SearchQueryModel.ClientPage = requestedPage ?? 1;
 
-        private void PopulateSearchResultModel(TwitterSearchModel model)
-        {
             // Retrieve data and populate the search result model for display
             model.SearchResultModel = new TwitterSearchResultModel();
             try
             {
                 model.SearchResultModel.TweetResults = TwitterSearchClient.Search(
-                    model.SearchText,
-                    model.ClientPage,
-                    model.ClientPageSize,
-                    model.NewSearch);
+                    model.SearchQueryModel.SearchText,
+                    model.SearchQueryModel.ClientPage,
+                    model.SearchQueryModel.ClientPageSize,
+                    newSearch: requestedPage == null);
             }
             catch (TwitterSearchException twitterSearchException)
             {
@@ -52,6 +52,8 @@ namespace TwitterSearchApp.Controllers
             {
                 model.SearchResultModel.ErrorMessage = "An unexpected error occurred, yikes!";
             }
+
+            return View(model);
         }
 
         /// <summary>
