@@ -11,13 +11,19 @@ using Newtonsoft.Json.Linq;
 
 namespace TwitterSearchApp.TwitterClient
 {
-    public static class TwitterSearchClient
+    public class TwitterSearchClient
     {
         private const string TWITTER_SEARCH_URI = "http://search.twitter.com/search.json";
         private const int TWITTER_PAGE_SIZE = 100;
-        private const string MAX_ID = "MAX_ID";
-        private const string CACHED_PAGE_RESULTS = "CURRENT_PAGE_RESULTS";
-        private const string CACHED_PAGE_NUMBER = "CACHED_PAGE_NUMBER";
+
+        private ILocalCache _localCache;
+        private ITwitterizerSearchService _searchService;
+
+        public TwitterSearchClient(ILocalCache localCache, ITwitterizerSearchService searchService)
+        {
+            _localCache = localCache;
+            _searchService = searchService;
+        }
 
         /// <summary>
         /// Returns search results in a structure ready for consumption by the client.
@@ -27,7 +33,7 @@ namespace TwitterSearchApp.TwitterClient
         /// <param name="clientPageSize">Page size requested for display by the client UI</param>
         /// <param name="newSearch">Whether or not recent results should be pulled from Twitter (i.e. do not pass a max_id)</param>
         /// <returns>Search results required for the requested client page.  Results returned will not exceed clientPageSize</returns>
-        public static IEnumerable<TwitterSearchResult> Search(string query, int clientPage, int clientPageSize, bool newSearch)
+        public IEnumerable<TwitterSearchResult> Search(string query, int clientPage, int clientPageSize, bool newSearch)
         {
             // Validate client input
             InputValidator.ValidateClientPage(clientPage);
@@ -46,14 +52,12 @@ namespace TwitterSearchApp.TwitterClient
         /// <summary>
         /// Returns search results.  Returns results from cache if available, otherwise fetches results from Twitter API.
         /// </summary>
-        private static TwitterSearchResultCollection GetTwitterResults(string query, int twitterPageNumber, bool newSearch)
+        private TwitterSearchResultCollection GetTwitterResults(string query, int twitterPageNumber, bool newSearch)
         {
             // Check cache for data
-            if (!newSearch &&
-                twitterPageNumber == (int)HttpContext.Current.Session[CACHED_PAGE_NUMBER] &&
-                HttpContext.Current.Session[CACHED_PAGE_RESULTS] != null)
+            if (!newSearch && twitterPageNumber == _localCache.PageNumber && _localCache.PageResults != null)
             {
-                return (TwitterSearchResultCollection)HttpContext.Current.Session[CACHED_PAGE_RESULTS];
+                return _localCache.PageResults;
             }
 
             // Build search parameters
@@ -61,13 +65,13 @@ namespace TwitterSearchApp.TwitterClient
             searchOptions.NumberPerPage = TWITTER_PAGE_SIZE;
             searchOptions.PageNumber = twitterPageNumber;
 
-            if (!newSearch && HttpContext.Current.Session[MAX_ID] != null)
+            if (!newSearch && _localCache.MaxId.HasValue)
             {
-                searchOptions.MaxId = (long)HttpContext.Current.Session[MAX_ID];
+                searchOptions.MaxId = _localCache.MaxId.Value;
             }
 
             // Execute search
-            TwitterResponse<TwitterSearchResultCollection> twitterResponse = Twitterizer.TwitterSearch.Search(query, searchOptions);
+            TwitterResponse<TwitterSearchResultCollection> twitterResponse = _searchService.Search(query, searchOptions);
 
             // Throw errors, connection failures back to the UI for proper handling
             if (twitterResponse.Result != RequestResult.Success)
@@ -76,11 +80,11 @@ namespace TwitterSearchApp.TwitterClient
             }
 
             // Store the MaxId for later to maintain page consistency
-            HttpContext.Current.Session[MAX_ID] = twitterResponse.ResponseObject.MaxId;
+            _localCache.MaxId = twitterResponse.ResponseObject.MaxId;
 
             // Cache results for future requests
-            HttpContext.Current.Session[CACHED_PAGE_RESULTS] = twitterResponse.ResponseObject;
-            HttpContext.Current.Session[CACHED_PAGE_NUMBER] = searchOptions.PageNumber;
+            _localCache.PageResults = twitterResponse.ResponseObject;
+            _localCache.PageNumber = searchOptions.PageNumber;
 
             return twitterResponse.ResponseObject;
         }

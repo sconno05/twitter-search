@@ -1,0 +1,16 @@
+C:\repos\twitter-search\TwitterSearch\TwitterSearchAppTests\bin\Debug\TwitterSearchAppTests.dll
+C:\repos\twitter-search\TwitterSearch\TwitterSearchAppTests\bin\Debug\TwitterSearchAppTests.pdb
+C:\repos\twitter-search\TwitterSearch\TwitterSearchAppTests\bin\Debug\Twitterizer2.dll
+C:\repos\twitter-search\TwitterSearch\TwitterSearchAppTests\bin\Debug\TwitterSearchApp.dll
+C:\repos\twitter-search\TwitterSearch\TwitterSearchAppTests\bin\Debug\Newtonsoft.Json.dll
+C:\repos\twitter-search\TwitterSearch\TwitterSearchAppTests\bin\Debug\TwitterSearchApp.pdb
+C:\repos\twitter-search\TwitterSearch\TwitterSearchAppTests\bin\Debug\Twitterizer2.pdb
+C:\repos\twitter-search\TwitterSearch\TwitterSearchAppTests\bin\Debug\Twitterizer2.xml
+C:\repos\twitter-search\TwitterSearch\TwitterSearchAppTests\bin\Debug\Newtonsoft.Json.pdb
+C:\repos\twitter-search\TwitterSearch\TwitterSearchAppTests\bin\Debug\Newtonsoft.Json.xml
+C:\repos\twitter-search\TwitterSearch\TwitterSearchAppTests\obj\Debug\TwitterSearchAppTests.csprojResolveAssemblyReference.cache
+C:\repos\twitter-search\TwitterSearch\TwitterSearchAppTests\obj\Debug\TwitterSearchAppTests.dll
+C:\repos\twitter-search\TwitterSearch\TwitterSearchAppTests\obj\Debug\TwitterSearchAppTests.pdb
+C:\repos\twitter-search\TwitterSearch\TwitterSearchAppTests\bin\Debug\MvcContrib.TestHelper.dll
+C:\repos\twitter-search\TwitterSearch\TwitterSearchAppTests\bin\Debug\Rhino.Mocks.dll
+C:\repos\twitter-search\TwitterSearch\TwitterSearchAppTests\bin\Debug\Rhino.Mocks.xml

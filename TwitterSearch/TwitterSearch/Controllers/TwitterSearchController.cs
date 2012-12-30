@@ -38,7 +38,10 @@ namespace TwitterSearchApp.Controllers
             model.SearchResultModel = new TwitterSearchResultModel();
             try
             {
-                model.SearchResultModel.TweetResults = TwitterSearchClient.Search(
+                TwitterSearchClient searchClient = new TwitterSearchClient(
+                    new SessionStateCache(this.HttpContext.Session),
+                    new TwitterizerSearchService());
+                model.SearchResultModel.TweetResults = searchClient.Search(
                     model.SearchText,
                     model.ClientPage,
                     model.ClientPageSize,

@@ -14,8 +14,6 @@ namespace TwitterSearchApp.Models
             this.ClientPage = 1;
         }
 
-        private const int CLIENT_PAGE_SIZE = 10;
-
         [Required]
         [DataType(DataType.Text)]
         [Display(Name = "Enter a hashtag")]
@@ -23,6 +21,7 @@ namespace TwitterSearchApp.Models
 
         public int ClientPage { get; set; }
 
+        private const int CLIENT_PAGE_SIZE = 10;
         public int ClientPageSize
         {
             get { return CLIENT_PAGE_SIZE; }
